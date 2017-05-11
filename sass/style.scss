@@ -64,7 +64,7 @@ main
   }
   form
   {
-    padding-top: 50px;
+    padding-top: 40px;
     font-size: 1.4em;
     max-width: 580px;
     margin: 0 auto;
@@ -74,7 +74,7 @@ main
   {
     line-height: 42px;
   }
-  .field-name
+  .field--name
   {
     width: 45%;
     margin-right: 10%;
@@ -85,10 +85,10 @@ main
       width: auto;
       margin-right: 0;
       float: none;
-      margin-bottom: 1em;
+      margin-bottom: 0.75em;
     }
   }
-  .field-email
+  .field--email
   {
     float: left;
     width: 45%;
@@ -97,6 +97,7 @@ main
     {
       width: auto;
       float: none;
+      margin-bottom: 0.75em;
     }
   }
   .form-actions
@@ -111,10 +112,30 @@ main
   }
 }
 
-label > div
+.field-label
 {
-  @include alicefont;
+  display: block;
+  position: relative;
+  padding-top: 25px;
   border-bottom: 2px solid white;
+  
+  & > div
+  {
+    @include alicefont;
+    position: absolute;
+    height: 42px;
+    line-height: 42px;
+    top: 25px;
+    transition: all 0.25s;
+  }
+  input:focus ~ div,
+  input:not([value=""]) ~ div
+  {
+    top: 0;
+    height: 25px;
+    line-height: 25px;
+    font-size: 0.9375em;
+  }
 }
 input[type=text],
 input[type=email]
