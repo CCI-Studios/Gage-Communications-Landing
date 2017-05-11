@@ -20,6 +20,76 @@ body
   background: black;
 }
 
+.field-label
+{
+  display: block;
+  position: relative;
+  padding-top: 25px;
+  
+  & > div
+  {
+    @include alicefont;
+    position: absolute;
+    height: 42px;
+    line-height: 42px;
+    top: 25px;
+    transition: all 0.25s;
+  }
+  input:focus ~ div,
+  input:not([value=""]) ~ div
+  {
+    top: 0;
+    height: 25px;
+    line-height: 25px;
+    font-size: 0.9375em;
+  }
+  input[type=text],
+  input[type=email]
+  {
+    border-bottom: 2px solid white;;
+  }
+}
+input[type=text],
+input[type=email]
+{
+  font-family: inherit;
+  font-size: inherit;
+  border: 0;
+  color: white;
+  height: 42px;
+  line-height: 42px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+}
+
+button,
+input[type=submit]
+{
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-size: 0.8em;
+  color: black;
+  background: white;
+  text-align: center;
+  min-width: 120px;
+  padding: 0 20px;
+  height: 45px;
+  line-height: 45px;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  
+  &:hover,
+  &:focus
+  {
+    background: black;
+    color: white;
+  }
+}
+
 main
 {
   padding: 85px 25px 75px 25px;
@@ -111,71 +181,9 @@ main
   {
     font-size: 0.75em;
   }
-}
-
-.field-label
-{
-  display: block;
-  position: relative;
-  padding-top: 25px;
-  border-bottom: 2px solid white;
-  
-  & > div
+  input.mce_inline_error
   {
-    @include alicefont;
-    position: absolute;
-    height: 42px;
-    line-height: 42px;
-    top: 25px;
-    transition: all 0.25s;
-  }
-  input:focus ~ div,
-  input:not([value=""]) ~ div
-  {
-    top: 0;
-    height: 25px;
-    line-height: 25px;
-    font-size: 0.9375em;
-  }
-}
-input[type=text],
-input[type=email]
-{
-  font-family: inherit;
-  font-size: inherit;
-  border: 0;
-  color: white;
-  height: 42px;
-  line-height: 42px;
-  padding: 0 8px;
-  box-sizing: border-box;
-  width: 100%;
-  background: transparent;
-}
-
-button,
-input[type=submit]
-{
-  appearance: none;
-  -webkit-appearance: none;
-  font-family: inherit;
-  font-size: 0.8em;
-  color: black;
-  background: white;
-  text-align: center;
-  min-width: 120px;
-  padding: 0 20px;
-  height: 45px;
-  line-height: 45px;
-  border: 0;
-  cursor: pointer;
-  transition: all 0.2s;
-  
-  &:hover,
-  &:focus
-  {
-    background: black;
-    color: white;
+    border-color: red;
   }
 }
 
