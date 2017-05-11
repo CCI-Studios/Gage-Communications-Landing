@@ -62,6 +62,9 @@ input[type=email]
   box-sizing: border-box;
   width: 100%;
   background: transparent;
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 button,
